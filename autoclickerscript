@@ -26,7 +26,7 @@ runcode(function()
 			if clicking == true then
 				print("if you see this then its synapses fault its not working ok")
 				mouse1click()
-				mouse1click()
+				mouse2click()
 			end
 		end
 	end)
