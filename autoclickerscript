@@ -9,6 +9,9 @@ local runcode = function(func)
 	func()
 end
 
+local mouse1click = function()
+	print("hi")
+end
 runcode(function()
 	local clicking = false
 	mouse.Button1Down:Connect(function()
@@ -17,10 +20,12 @@ runcode(function()
 	mouse.Button1Up:Connect(function()
 		clicking = false
 	end)
-	
+
 	spawn(function()
 		while task.wait() do
 			if clicking == true then
+				print("if you see this then its synapses fault its not working ok")
+				mouse1click()
 				mouse1click()
 			end
 		end
