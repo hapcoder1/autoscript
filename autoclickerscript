@@ -1,0 +1,28 @@
+repeat wait() until game:IsLoaded()
+print("hello g00reyy u are cool")
+local lplr = game.Players.LocalPlayer
+
+local uis = game:GetService("UserInputService")
+local mouse = lplr:GetMouse()
+
+local runcode = function(func)
+	func()
+end
+
+runcode(function()
+	local clicking = false
+	mouse.Button1Down:Connect(function()
+		clicking = true
+	end)
+	mouse.Button1Up:Connect(function()
+		clicking = false
+	end)
+	
+	spawn(function()
+		while task.wait() do
+			if clicking == true then
+				mouse1click()
+			end
+		end
+	end)
+end)
